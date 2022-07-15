@@ -1,0 +1,2 @@
+{"_id":{"$oid":"62d0d04066e68187ac5975fe"},"Id_profesor":"P001","Nombre":"Mario","Apellido":"Cuadrado"}
+{"_id":{"$oid":"62d0d05d66e68187ac5975ff"},"Id_profesor":"P002","Nombre":"Luis","Apellido":"Moreira"}

@@ -1,0 +1,2 @@
+{"_id":{"$oid":"62d0cc8c66e68187ac5975f7"},"Id_estudiante":"E001","Nombre":"Juan","Apellido":"Lopez","Año_Nacimiento":"2019"}
+{"_id":{"$oid":"62d0ccfb66e68187ac5975f8"},"Id_estudiante":"E002","Nombre":"Mario","Apellido":"Alama","Año_Nacimiento":"2018"}

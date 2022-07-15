@@ -1,0 +1,2 @@
+{"_id":{"$oid":"62d0cf4666e68187ac5975f9"},"Id_estudiante":"E001","Id_materia":"M001","Nota":"15"}
+{"_id":{"$oid":"62d0cf6566e68187ac5975fa"},"Id_estudiante":"E002","Id_materia":"M003","Nota":"16"}
