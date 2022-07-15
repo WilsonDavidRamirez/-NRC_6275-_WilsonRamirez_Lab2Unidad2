@@ -1,0 +1,84 @@
+show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use DataBaseProyecto
+switched to db DataBaseProyecto
+> db.Estudiante.save({Id_estudiante:'E001', Nombre:'Juan', Apellido:'Lopez', Año_Nacimiento:'2019'});
+WriteResult({ "nInserted" : 1 })
+> show dbs
+DataBaseProyecto  0.000GB
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+> db.Estudiante.save({Id_estudiante:'E002', Nombre:'Mario', Apellido:'Alama', Año_Nacimiento:'2018'});
+WriteResult({ "nInserted" : 1 })
+> var allRecords = db.names.find();
+> while(allRecords.hasNext()){printjson(allRecords.next());}
+>
+> use DataBaseProyecto
+switched to db DataBaseProyecto
+> var allRecords = db.names.find();
+> while(allRecords.hasNext()){printjson(allRecords.next());}
+> var allRecords = db.Estudiante.find();
+> while(allRecords.hasNext()){printjson(allRecords.next());}
+{
+        "_id" : ObjectId("62d0cc8c66e68187ac5975f7"),
+        "Id_estudiante" : "E001",
+        "Nombre" : "Juan",
+        "Apellido" : "Lopez",
+        "Año_Nacimiento" : "2019"
+}
+{
+        "_id" : ObjectId("62d0ccfb66e68187ac5975f8"),
+        "Id_estudiante" : "E002",
+        "Nombre" : "Mario",
+        "Apellido" : "Alama",
+        "Año_Nacimiento" : "2018"
+}
+> use DataBaseProyecto
+switched to db DataBaseProyecto
+> db.Nota_Final.save({Id_estudiante:'E001', Id_materia:'M001', Nota:'15'});
+WriteResult({ "nInserted" : 1 })
+> db.Nota_Final.save({Id_estudiante:'E002', Id_materia:'M003', Nota:'16'});
+WriteResult({ "nInserted" : 1 })
+> db.Materia.save({Id_materia:'M001', Id_profesor:'P001', Nombre:'logica'});
+WriteResult({ "nInserted" : 1 })
+> db.Materia.save({Id_materia:'M002', Id_profesor:'P002', Nombre:'lectoescritura'});
+WriteResult({ "nInserted" : 1 })
+> db.Materia.save({Id_materia:'M003', Id_profesor:'P002', Nombre:'grafomotricidad'});
+WriteResult({ "nInserted" : 1 })
+> db.Profesor.save({Id_profesor:'P001', Nombre:'Mario', Apellido:'Cuadrado'});
+WriteResult({ "nInserted" : 1 })
+> db.Profesor.save({Id_profesor:'P002', Nombre:'Luis', Apellido:'Moreira'});
+WriteResult({ "nInserted" : 1 })
+
+
+EXPORTACION DE COLECCIONES
+
+Microsoft Windows [Versión 10.0.19044.1766]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\WILSON>cd C:\MongoDB\Tools\100\bin
+
+C:\MongoDB\Tools\100\bin>mongoexport --db DataBaseProyecto -c Estudiante --out estudiante.json
+2022-07-14T21:52:37.768-0500    connected to: mongodb://localhost/
+2022-07-14T21:52:38.272-0500    exported 2 records
+
+C:\MongoDB\Tools\100\bin>mongoexport --db DataBaseProyecto -c Nota_final --out notaFinal.json
+2022-07-14T21:54:58.815-0500    connected to: mongodb://localhost/
+2022-07-14T21:54:58.851-0500    exported 0 records
+
+C:\MongoDB\Tools\100\bin>mongoexport --db DataBaseProyecto -c Materia --out materia.json
+2022-07-14T21:55:33.739-0500    connected to: mongodb://localhost/
+2022-07-14T21:55:33.775-0500    exported 3 records
+
+C:\MongoDB\Tools\100\bin>mongoexport --db DataBaseProyecto -c Profesor --out profesor.json
+2022-07-14T21:56:13.249-0500    connected to: mongodb://localhost/
+2022-07-14T21:56:13.287-0500    exported 2 records
+
+C:\MongoDB\Tools\100\bin>mongoexport --db DataBaseProyecto -c Nota_Final --out notaFinal.json
+2022-07-14T21:59:13.260-0500    connected to: mongodb://localhost/
+2022-07-14T21:59:13.297-0500    exported 2 records
+
+C:\MongoDB\Tools\100\bin>
